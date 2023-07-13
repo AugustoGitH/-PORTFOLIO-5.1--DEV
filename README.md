@@ -25,6 +25,8 @@ O projeto é desenvolvido com as seguintes tecnologias:
   - [MongoDB](https://www.mongodb.com/) - Banco de dados NoSQL orientado a documentos.
   - [Hapi Joi](https://hapi.dev/module/joi/) - Biblioteca para validação de dados em Node.js.
   - [TypeScript](https://www.typescriptlang.org/) - Linguagem de programação que adiciona tipagem estática ao JavaScript.
+  - [JWT](https://jwt.io/): JSON Web Tokens para autenticação e geração de tokens.
+  - [bcrypt](https://www.npmjs.com/package/bcrypt): Biblioteca para criptografia de senhas em Node.js.
 
 ## Funcionalidades
 
