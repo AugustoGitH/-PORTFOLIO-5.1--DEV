@@ -4,6 +4,8 @@
 
 Este repositório contém o código-fonte do meu portfólio pessoal, um site que apresenta meus projetos e habilidades técnicas. O portfólio inclui um painel administrativo que permite gerenciar os projetos exibidos.
 
+Deploy: [Link do meu portfólio](https://augustowestphal.up.railway.app)
+
 ## Tecnologias Utilizadas
 
 O projeto é desenvolvido com as seguintes tecnologias:
