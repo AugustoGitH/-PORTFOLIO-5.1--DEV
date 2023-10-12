@@ -4,7 +4,7 @@ exports.whiteListTechsUsedProject = exports.whiteListTypesProject = void 0;
 exports.whiteListTypesProject = [
     'all',
     'e-commerce',
-    'lading page',
+    'landing page',
     'web app',
 ];
 exports.whiteListTechsUsedProject = [

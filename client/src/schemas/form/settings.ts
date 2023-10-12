@@ -1,12 +1,11 @@
-import { TProjectTechnologiesUsed, TProjectType } from "../../types/Project";
-
+import { TProjectTechnologiesUsed, TProjectType } from '../../types/Project'
 
 export const whiteListTypesProject: TProjectType[] = [
   'all',
   'e-commerce',
-  'lading page',
-  'web app'
-];
+  'landing page',
+  'web app',
+]
 
 export const whiteListTechsUsedProject: TProjectTechnologiesUsed[] = [
   'bootstrap',
@@ -19,5 +18,5 @@ export const whiteListTechsUsedProject: TProjectTechnologiesUsed[] = [
   'nodejs',
   'reactjs',
   'sass',
-  'typescript'
-];
+  'typescript',
+]

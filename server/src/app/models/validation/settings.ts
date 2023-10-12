@@ -6,7 +6,7 @@ import {
 export const whiteListTypesProject: TProjectType[] = [
   'all',
   'e-commerce',
-  'lading page',
+  'landing page',
   'web app',
 ]
 

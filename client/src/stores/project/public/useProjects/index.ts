@@ -1,6 +1,6 @@
-import { create } from 'zustand';
+import { create } from 'zustand'
 
-import { type IActions, type IStates } from './types';
+import { type IActions, type IStates } from './types'
 
 const useProjectsStore = create<IActions & IStates>((set) => ({
   projects: null,
@@ -12,25 +12,26 @@ const useProjectsStore = create<IActions & IStates>((set) => ({
       projects,
       statesShowPercentageTechs: projects
         ? Object.fromEntries(projects.map((project) => [project._id, false]))
-        : {}
-    });
+        : {},
+    })
   },
   editStatesShowPercentageTechs: (statesPercentage) => {
     set((state) => ({
       statesShowPercentageTechs: statesPercentage(
         state.statesShowPercentageTechs
-      )
-    }));
+      ),
+    }))
   },
   filterProjectsOnCanvas: (type) => {
     set((state) => {
       const filteredProjects =
-        state.projects?.filter((project) => project.type === type) ?? [];
+        state.projects?.filter((project) => project.type === type) ?? []
       return {
-        canvasProjects: type === 'all' ? state.projects ?? [] : filteredProjects
-      };
-    });
-  }
-}));
+        canvasProjects:
+          type === 'all' ? state.projects ?? [] : filteredProjects,
+      }
+    })
+  },
+}))
 
-export default useProjectsStore;
+export default useProjectsStore

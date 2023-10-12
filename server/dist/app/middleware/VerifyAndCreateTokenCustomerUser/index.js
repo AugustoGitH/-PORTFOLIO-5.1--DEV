@@ -21,6 +21,7 @@ const VerifyAndCreateTokenCustomerUser = (req, res, next) => __awaiter(void 0, v
             path: '/',
             secure: true,
             httpOnly: true,
+            sameSite: "none"
         });
     }
     next();

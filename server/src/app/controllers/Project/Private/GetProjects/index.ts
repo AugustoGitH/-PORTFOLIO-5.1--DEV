@@ -9,16 +9,14 @@ import { type IResponseSend } from './types'
 const getProjects = async (req: Request, res: Response): Promise<void> => {
   try {
     const projects = await Project.find({})
-    setTimeout(()=>{
-      res.status(200).send(
-        forceReturnType<IResponseSend>({
-          message: constants.SUCCESS_MESSAGE_SEARCHED_PROJECTS,
-          projects: projects.map((project) =>
-            handleModelBasedAuth(project).private()
-          ),
-        })
-      )
-    }, 3000)
+    res.status(200).send(
+      forceReturnType<IResponseSend>({
+        message: constants.SUCCESS_MESSAGE_SEARCHED_PROJECTS,
+        projects: projects.map((project) =>
+          handleModelBasedAuth(project).private()
+        ),
+      })
+    )
   } catch (error) {
     console.log(error)
     res.status(500).send(

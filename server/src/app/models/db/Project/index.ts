@@ -28,4 +28,4 @@ const projectSchema = new Schema<IProjectModelDocument>(
   { timestamps: true }
 )
 
-export default model<IProjectModelDocument>('Project', projectSchema)
+export default model<IProjectModelDocument>('Project-02', projectSchema)

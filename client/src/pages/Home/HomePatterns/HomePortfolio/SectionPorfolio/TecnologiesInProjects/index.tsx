@@ -1,5 +1,6 @@
 
 
+import Translate from "../../../../../../components/Translate"
 import techsInProjects from "../../../../../../settings/techsInProjects"
 import * as S from "./styles"
 
@@ -7,7 +8,7 @@ import * as S from "./styles"
 const TechologiesInProjects = (): JSX.Element => {
   return (
     <S.TechologiesInProjects>
-      <h1>technologies in projects</h1>
+      <h1><Translate>Tecnologias e Ferramentas</Translate></h1>
       <ul>
         {
           techsInProjects.map((tech) => (

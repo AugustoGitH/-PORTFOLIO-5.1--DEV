@@ -2,13 +2,12 @@
 
 import { useEffect, useState } from "react"
 
-
-
 import * as S from "./styles"
+import storageKeys from "../../../constants/storageKeys"
 
 
 const AlertCookies = (): JSX.Element => {
-  const isAuthCookies = typeof window !== "undefined" ? JSON.parse(window.localStorage.getItem("auth-cookies") ?? "false") : false
+  const isAuthCookies = JSON.parse(localStorage.getItem(storageKeys.AUTH_COOKIES) ?? "false")
   const [show, setShow] = useState(false)
 
   useEffect(() => {
@@ -17,12 +16,12 @@ const AlertCookies = (): JSX.Element => {
     }
   }, [isAuthCookies])
 
+
   const handleClickClose = (): void => {
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem("auth-cookies", JSON.stringify(true))
-      setShow(false)
-    }
+    localStorage.setItem(storageKeys.AUTH_COOKIES, "true")
+    setShow(false)
   }
+
   return show ? (
     <S.AlertCookies>
       <div className="card">

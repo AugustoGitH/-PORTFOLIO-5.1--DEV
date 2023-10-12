@@ -1,4 +1,4 @@
-import { type IPresenceAnimation, type TNameAnimation } from './types';
+import { type IPresenceAnimation, type TNameAnimation } from './types'
 
 const animations = {
   opacity: (name: TNameAnimation) => `
@@ -71,8 +71,8 @@ const animations = {
       transform: translateY(0);
     }
   }
-`
-};
+`,
+}
 
 export const presenceAnimation = ({
   animation,
@@ -82,7 +82,7 @@ export const presenceAnimation = ({
   fillMode = 'none',
   iterationCount = 1,
   playState = 0,
-  timingFunction = 'ease'
+  timingFunction = 'ease',
 }: IPresenceAnimation): string => {
   const templateAnimation = `
     ${animations[animation](animation)}
@@ -94,6 +94,6 @@ export const presenceAnimation = ({
     animation-direction: ${direction};
     animation-fill-mode: ${fillMode};
     animation-play-state: ${playState};
-  `;
-  return templateAnimation;
-};
+  `
+  return templateAnimation
+}

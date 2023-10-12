@@ -5,11 +5,11 @@ const ancors = {
     INSTAGRAM: 'https://www.instagram.com/augusto_westphall/',
     FACEBOOK: 'https://www.facebook.com/augusto.westphal.9/',
     EMAIL: 'mailto:augustoc.westphal@gmail.com',
-    WHATSAPP: 'https://wa.me/5527997435139'
+    WHATSAPP: 'https://wa.me/5527997435139',
   },
   others: {
-    CV: 'https://drive.google.com/file/d/1Yy1TG9sqfjR6wcQiIJ4cA2ar_0ieCCpk/view?usp=sharing'
-  }
-};
+    CV: 'https://drive.google.com/file/d/106dLPMjQIAyVH58Q9m_n-vExW1M8_zd9/view?usp=sharing',
+  },
+}
 
-export default ancors;
+export default ancors

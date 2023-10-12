@@ -16,6 +16,9 @@ export const InputForEditing = styled.div`
     width: 100%;
     color: ${roots.color.DARK};
     transition: .2s;
+    &::placeholder{
+      color: #000;
+    }
     &:focus{
       background-color: ${roots.color.LIGTH};
     }

@@ -52,6 +52,7 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             path: '/',
             secure: true,
             httpOnly: true,
+            sameSite: "none"
         });
         res.status(200).send((0, forceReturnType_1.default)({
             message: constants_1.default.MESSAGE_SUCCESS_LOGIN,

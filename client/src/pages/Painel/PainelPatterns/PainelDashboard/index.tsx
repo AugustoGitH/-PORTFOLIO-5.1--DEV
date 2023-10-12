@@ -16,13 +16,13 @@ import useFetchProjectsPrivate from "../../../../queries/services/fetchProjectsP
 
 const PainelDashboard = (): JSX.Element => {
   const dataDashboard = useProjectsStore(state => state.dataDashboard)
-  const { isFetching } = useFetchProjectsPrivate()
+  const { isLoading } = useFetchProjectsPrivate()
 
-  const [{ completedProjects, devlopmentProjects, ecommerces, ladingPages, likes, views, webApps }, setDashboardDefaultValues] = useState<IDashboardData>({
+  const [{ completedProjects, devlopmentProjects, ecommerces, landingPages, likes, views, webApps }, setDashboardDefaultValues] = useState<IDashboardData>({
     completedProjects: 0,
     devlopmentProjects: 0,
     ecommerces: 0,
-    ladingPages: 0,
+    landingPages: 0,
     likes: {
       all: 0,
       currentDay: 0
@@ -47,7 +47,7 @@ const PainelDashboard = (): JSX.Element => {
       <ul className="dash-projects">
         <CardInfo.Compound
           title="Curtidas"
-          loading={isFetching}
+          loading={isLoading}
           quantity={likes.all}
           subTitle="em seus projetos"
           icon={<i className='bx bxs-like'></i>}
@@ -58,7 +58,7 @@ const PainelDashboard = (): JSX.Element => {
         />
         <CardInfo.Compound
           title="Visualizações"
-          loading={isFetching}
+          loading={isLoading}
           quantity={views.all}
           subTitle="em seus projetos"
           {...(views.currentDay && {
@@ -69,7 +69,7 @@ const PainelDashboard = (): JSX.Element => {
         />
         <CardInfo.Compound
           quantity={completedProjects}
-          loading={isFetching}
+          loading={isLoading}
           title={`projeto${completedProjects === 1 ? "" : "s"}`}
           subTitle="concluidos e ativos"
           icon={<i className='bx bxs-box' ></i>}
@@ -77,7 +77,7 @@ const PainelDashboard = (): JSX.Element => {
         />
         <CardInfo.Compound
           quantity={devlopmentProjects}
-          loading={isFetching}
+          loading={isLoading}
           title={`projeto${devlopmentProjects === 1 ? "" : "s"}`}
           subTitle="em desenvolvimento"
           icon={<i className='bx bxs-cog' ></i>}
@@ -86,21 +86,21 @@ const PainelDashboard = (): JSX.Element => {
       </ul>
       <ul className="dash-types">
         <CardInfo.Simple
-          loading={isFetching}
-          quantity={ladingPages}
-          title="Lading Pages"
+          loading={isLoading}
+          quantity={landingPages}
+          title="Landing Pages"
           order={5}
         />
         <CardInfo.Simple
           quantity={webApps}
-          loading={isFetching}
+          loading={isLoading}
           title="Web Apps"
           order={6}
         />
         <CardInfo.Simple
           quantity={ecommerces}
           title="E-Commerces"
-          loading={isFetching}
+          loading={isLoading}
           order={7}
         />
       </ul>

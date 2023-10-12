@@ -1,4 +1,11 @@
-const techsInProjects = [
+import { ReactNode } from "react"
+
+interface ITechInProjects {
+    name: string,
+    icon: ReactNode | string
+}
+
+const techsInProjects: ITechInProjects[] = [
     {
         name: "HTML5",
         icon: (<i className="bx bxl-html5" />)
@@ -10,6 +17,15 @@ const techsInProjects = [
     {
         name: "JavaScript",
         icon: (<i className="bx bxl-javascript" />)
+    },
+    {
+        name: "JQuery",
+        icon: (<i className='bx bxl-jquery' ></i>)
+    },
+
+    {
+        name: "SASS",
+        icon: (<i className='bx bxl-sass' ></i>)
     },
     {
         name: "Firebase",
@@ -32,6 +48,10 @@ const techsInProjects = [
         icon: (<i className="bx bxl-react" />)
     },
     {
+        name: "Redux",
+        icon: (<i className='bx bxl-redux' ></i>)
+    },
+    {
         name: "NextJS",
         icon: (<i className="bx bxl-react" />)
     },
@@ -39,6 +59,14 @@ const techsInProjects = [
         name: "TypeScript",
         icon: (<i className="bx bxl-typescript" />)
     },
+    {
+        name: "Git",
+        icon: (<i className='bx bxl-git'></i>)
+    },
+    {
+        name: "Trello",
+        icon: (<i className='bx bxl-trello' ></i>)
+    }
 ]
 
 export default techsInProjects

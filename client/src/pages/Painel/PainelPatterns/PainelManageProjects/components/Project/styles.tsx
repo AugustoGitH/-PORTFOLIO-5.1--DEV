@@ -4,10 +4,23 @@ import roots from "../../../../../../styles/roots";
 import { presenceAnimation } from "../../../../../../animations/presence";
 
 
-export const Project = styled.li`
+interface IProjectProps {
+  order: number
+}
+
+export const Project = styled.li<IProjectProps>`
   width: 100%;
   position: relative;
   padding-bottom: 3rem;
+  opacity: 0;
+  ${({ order }) => presenceAnimation({
+  animation: 'translateLeft',
+  duration: 0.6,
+  delay: order / 10,
+  fillMode: 'forwards',
+  timingFunction: 'ease'
+})}
+  
   .sub-project, .sup-project{
     width: 100%;
   }
@@ -17,6 +30,7 @@ export const Project = styled.li`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    
   }
   .sub-project{
     width: 100%;
@@ -26,14 +40,12 @@ export const Project = styled.li`
     justify-content: flex-start;
     gap: 2rem;
     @media (max-width: ${roots.screens.MD}) {
-      gap: 1rem;
-    }
-    @media (max-width: ${roots.screens.SM}) {
       flex-direction: column;
+      gap: 1rem;
       height: 800px;
     }
     @media (max-width: ${roots.screens.XSM}) {
-      height: 600px;
+      height: 700px;
     }
     .form-inputs-edit{
       width: calc(100% - 30% - 2rem - 80px);
@@ -42,7 +54,7 @@ export const Project = styled.li`
       flex-direction: column;
       justify-content: center;
       gap: 1rem;
-      @media (max-width: ${roots.screens.SM}) {
+      @media (max-width: ${roots.screens.MD}) {
         width: 100%;
         height: auto;
         margin: 2rem 0;

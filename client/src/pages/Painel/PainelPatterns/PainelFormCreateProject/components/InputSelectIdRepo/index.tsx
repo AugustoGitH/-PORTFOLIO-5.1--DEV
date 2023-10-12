@@ -37,17 +37,20 @@ const InputSelectIdRepo = ({ onChange, reset = false, error = false, helperText,
     return () => { document.removeEventListener("click", handleEventBlurSelected); }
   }, [showOptions])
 
+
   useEffect(() => {
     if (reset) {
       setNameRepo("")
       setIdSelected(null)
       setReposFocus(repositories ?? [])
     }
-  }, [reset, repositories])
+  }, [reset])
 
   useEffect(() => {
-    onChange(idSelected)
-  }, [idSelected, onChange])
+    if (onChange) {
+      onChange(idSelected)
+    }
+  }, [idSelected])
 
   const handleClickRepo = (idRepo: number, nameRepo: string): void => {
     setIdSelected(idRepo)

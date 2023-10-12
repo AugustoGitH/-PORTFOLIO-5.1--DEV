@@ -55,9 +55,10 @@ interface IBarPercentageProps {
 }
 
 export const BarPercentage = styled.li<IBarPercentageProps>`
+  width: 100%;
   display: flex;
-    gap: 0.5rem;
-    align-items: center;
+  gap: 0.5rem;
+  align-items: center;
     .icon-tech {
       flex: none;
       display: flex;
@@ -71,31 +72,6 @@ export const BarPercentage = styled.li<IBarPercentageProps>`
       font-size: .8rem;
       position: relative;
       cursor: default;
-      &::after {
-        content: ${({ tech }) => `"${tech}"`};
-        text-transform: uppercase;
-        letter-spacing: 0.02rem;
-        position: absolute;
-        left: 1.5rem;
-        bottom: -0.4rem;
-        background-color: ${roots.color.DARK};
-        pointer-events: none;
-        color: ${roots.color.LIGTH};
-        padding: 0.3rem 0.5rem;
-        z-index: ${roots.orders.SUP};
-        border-radius: 0.3rem;
-        font-size: 0.7rem;
-        opacity: 0;
-        transform: translateX(10px);
-        transition: 0.2s;
-        font-weight: bold
-      }
-      &:hover {
-        &::after {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
       i {
         font-size: 1rem;
       }

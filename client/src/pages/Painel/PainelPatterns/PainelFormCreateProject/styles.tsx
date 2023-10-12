@@ -49,8 +49,9 @@ export const PopUpLoading = styled.div`
   top: -1rem;
   left: -1rem;
   backdrop-filter: blur(3px);
-  z-index: 15;
+  z-index: ${roots.orders.XSUB};
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: ${roots.orders.XSUP};
 `;

@@ -9,7 +9,6 @@ interface IPropsAuthPrivateRouter {
   redirect: string,
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const AuthPrivateRouter = ({
   children, redirect }: IPropsAuthPrivateRouter) => {
   const { data: auth, isFetching } = useFetchVerifyCredential()

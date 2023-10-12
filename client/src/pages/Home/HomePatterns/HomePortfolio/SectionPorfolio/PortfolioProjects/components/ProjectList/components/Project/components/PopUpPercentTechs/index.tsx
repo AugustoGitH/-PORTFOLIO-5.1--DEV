@@ -1,7 +1,5 @@
-
-
-
-
+import LegendItem from "../../../../../../../../../../../../components/LegendItem"
+import Translate from "../../../../../../../../../../../../components/Translate"
 import techsWhiteListIcon from "../../../../../../../../../../../../settings/techsWhiteListIcon"
 import treatingTechsToShowPercentage from "../../../../../../../../../../../../utils/treatingTechsToShowPercentage"
 import * as S from "./styles"
@@ -10,23 +8,24 @@ import { type IPopUpPercentTechsProps, type IBarTechnologieProps } from "./types
 
 const BarTechnologie = ({ tech, percent, order, idProject, listIcons }: IBarTechnologieProps): JSX.Element => {
   return (
-    <S.BarTechnologie order={order} percent={percent} tech={tech} id={idProject}>
-      <div className="icon-tech">
-        {listIcons.find((techList) => techList.tech === tech)?.icon}
-      </div>
-      <div className="bar-percent-container">
-        <div className="bar-percent-content">
-          <span className="percent-tech">{`${percent}%`}</span>
+    <LegendItem legend={tech.toUpperCase()} sizeLegend="sm">
+      <S.BarTechnologie order={order} percent={percent} id={idProject} tech={tech}>
+        <div className="icon-tech">
+          {listIcons.find((techList) => techList.tech === tech)?.icon}
         </div>
-      </div>
-    </S.BarTechnologie>
+        <div className="bar-percent-container">
+          <div className="bar-percent-content">
+            <span className="percent-tech">{`${percent}%`}</span>
+          </div>
+        </div>
+      </S.BarTechnologie>
+    </LegendItem>
   )
 }
 
 
 const PopUpPercentTechs = ({ percents, idProject, technologies, show, onClose }: IPopUpPercentTechsProps): JSX.Element => {
   const tratedPercentsDecimalToPercentage = treatingTechsToShowPercentage(percents, technologies)
-
 
   return show ? (
     <S.PopUpPercentTechs>
@@ -43,7 +42,7 @@ const PopUpPercentTechs = ({ percents, idProject, technologies, show, onClose }:
                       tech={tech}
                       listIcons={techsWhiteListIcon}
                       order={index}
-                      percent={percent as number}
+                      percent={percent}
                     />
                   ))
                 }
@@ -51,10 +50,8 @@ const PopUpPercentTechs = ({ percents, idProject, technologies, show, onClose }:
             </>
           ) : (
             <div className="message-not-percent-techs">
-              <span><i className='bx bxs-inbox'></i>Este projeto não há indices de tecnologias mais usadas</span>
+              <span><i className='bx bxs-inbox'></i><Translate>Este projeto não possui índices de tecnologias mais usadas!</Translate></span>
             </div>
-
-
           )
         }
         <button className="btn-close" onClick={onClose}><i className='bx bx-x' ></i></button>

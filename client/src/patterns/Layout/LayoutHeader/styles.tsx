@@ -2,6 +2,10 @@
 import { styled } from 'styled-components';
 import roots from '../../../styles/roots';
 
+
+
+
+
 export const LayoutHeader = styled.header`
   background-color: ${roots.color.PRIMARY};
   padding: 0 4rem;
@@ -67,52 +71,6 @@ export const LayoutHeader = styled.header`
         &:hover {
           border-radius: 10%;
         }
-      }
-
-      .button-github,
-      .button-linkedin,
-      .button-curriculum,
-      .button-back,
-      .button-logout {
-        &:hover {
-          &::after {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        &::after {
-          pointer-events: none;
-          position: absolute;
-          width: 70px;
-          font-size: ${roots.font.size.XXSM};
-          background-color: ${roots.color.DARK};
-          color: ${roots.color.LIGTH};
-          padding: 0.3rem;
-          text-align: center;
-          z-index: ${roots.orders.SUP};
-          border-radius: 0.3rem;
-          bottom: -1.8rem;
-          transform: translateY(-20px);
-          opacity: 0;
-          transition: 0.2s;
-        }
-      }
-      .button-github::after {
-        content: 'Meu GitHub';
-      }
-      .button-back::after{
-        content: "Voltar";
-        width: 40px;
-      }
-      .button-linkedin::after {
-        content: 'Meu Linkedin';
-      }
-      .button-logout::after {
-        content: 'Fazer Logout';
-      }
-      .button-curriculum::after {
-        content: 'Baixar Currículo';
-        width: 85px;
       }
     }
   }

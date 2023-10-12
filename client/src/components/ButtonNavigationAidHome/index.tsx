@@ -1,5 +1,5 @@
 
-import { type MutableRefObject, useEffect, useState, useCallback } from "react"
+import { type MutableRefObject, useEffect, useState } from "react"
 
 
 import * as S from "./styles"
@@ -15,27 +15,22 @@ const ButtonNavigationAidHome = ({ refs }: IButtonNavigationAidHomeProps): JSX.E
   const [sectionCurrent, setSectionCurrent] = useState<"portfolio" | "about">("portfolio")
 
 
-  const onScroll = useCallback((): void => {
+  const onScroll = (): void => {
     const { current: about } = refs.about
     if (about) {
       const distanceAboutTheTop = about.getBoundingClientRect().top
       setSectionCurrent((distanceAboutTheTop - 550) <= 0 ? "about" : "portfolio")
     }
-
-  }, [refs])
+  }
 
   useEffect(() => {
     document.addEventListener("scroll", onScroll)
     return () => { document.removeEventListener("scroll", onScroll); }
-
   }, [onScroll])
 
-  const handleredirectClient = useCallback(() => {
-    if (typeof window !== "undefined") {
-      window.location.href = sectionCurrent === "about" ? "#portfolio-section" : "#about-section"
-    }
-
-  }, [sectionCurrent])
+  const handleredirectClient = (): void => {
+    window.location.href = sectionCurrent === "about" ? "#portfolio-section" : "#about-section"
+  }
 
   return (
     <S.ButtonNavigationAidHome onClick={handleredirectClient}>

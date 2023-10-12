@@ -5,6 +5,7 @@ import * as S from "./styles"
 import { type IRegisterFilter } from "./types"
 import useProjectsStore from "../../../../../../../../stores/project/public/useProjects"
 import { TProjectType } from "../../../../../../../../types/Project"
+import Translate from "../../../../../../../../components/Translate"
 
 
 const FiltersTypeProject = (): JSX.Element => {
@@ -23,10 +24,10 @@ const FiltersTypeProject = (): JSX.Element => {
   return (
     <S.FiltersTypeProject>
       <li {...registerFilter("all")} >
-        All
+        <Translate>All</Translate>
       </li>
-      <li {...registerFilter("lading page")}>
-        Lading Pages
+      <li {...registerFilter("landing page")}>
+        Landing Pages
       </li>
       <li {...registerFilter("web app")}>
         Web Apps

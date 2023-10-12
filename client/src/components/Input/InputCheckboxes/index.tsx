@@ -55,7 +55,6 @@ const InputCheckboxes = ({ options, label, name, tagAnyone, onChange, value, res
             selectValue
       })
     }
-
   }
 
   useEffect(() => {

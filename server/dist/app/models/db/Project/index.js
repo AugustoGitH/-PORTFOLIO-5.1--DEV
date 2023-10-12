@@ -23,4 +23,4 @@ const projectSchema = new mongoose_1.Schema({
     repoLink: { type: String, default: '' },
     favorite: { type: Boolean, default: false },
 }, { timestamps: true });
-exports.default = (0, mongoose_1.model)('Project', projectSchema);
+exports.default = (0, mongoose_1.model)('Project-02', projectSchema);

@@ -1,17 +1,22 @@
-const assignRoutes = <T>(baseUrl: string, urls: Record<string, string>): T => {
+type TObjectRoutes<T extends string> = Record<T, string>
+
+const assignRoutes = <T extends string>(
+  baseUrl: string,
+  urls: TObjectRoutes<T>
+): TObjectRoutes<T> => {
   const removeBarsStartEndRoute = (route: string): string => {
     return `${route[0] === '/' ? '.' : ''}${route}${
       route[route.length - 1] === '/' ? '.' : ''
-    }`.replace(/(\.\/|\/\.)/g, '');
-  };
+    }`.replace(/(\.\/|\/\.)/g, '')
+  }
 
-  const baseUrlTrated = removeBarsStartEndRoute(baseUrl);
+  const baseUrlTrated = removeBarsStartEndRoute(baseUrl)
   return Object.fromEntries(
     Object.entries(urls).map(([name, routeUrl]) => {
-      const routeUrlTrated = removeBarsStartEndRoute(routeUrl);
-      return [name, `/${baseUrlTrated}/${routeUrlTrated}`];
+      const routeUrlTrated = removeBarsStartEndRoute(routeUrl as string)
+      return [name, `/${baseUrlTrated}/${routeUrlTrated}`]
     })
-  ) as T;
-};
+  ) as TObjectRoutes<T>
+}
 
-export default assignRoutes;
+export default assignRoutes

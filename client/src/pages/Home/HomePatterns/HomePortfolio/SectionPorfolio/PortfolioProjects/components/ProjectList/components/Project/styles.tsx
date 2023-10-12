@@ -1,10 +1,9 @@
-
-import { styled } from 'styled-components';
-import { presenceAnimation } from '../../../../../../../../../../animations/presence';
-import roots from '../../../../../../../../../../styles/roots';
+import { styled } from 'styled-components'
+import { presenceAnimation } from '../../../../../../../../../../animations/presence'
+import roots from '../../../../../../../../../../styles/roots'
 
 interface IProjectProps {
-  order: number;
+  order: number
 }
 
 export const Project = styled.li<IProjectProps>`
@@ -23,7 +22,7 @@ export const Project = styled.li<IProjectProps>`
       duration: 0.6,
       delay: order / 10,
       fillMode: 'backwards',
-      timingFunction: 'ease'
+      timingFunction: 'ease',
     })}
   @media (max-width: ${roots.screens.XXLG}) {
     flex-direction: column;
@@ -35,7 +34,7 @@ export const Project = styled.li<IProjectProps>`
   @media (max-width: ${roots.screens.XSM}) {
     height: calc(550px + 3rem);
   }
-`;
+`
 
 export const Description = styled.div`
   width: calc(100% - 300px);
@@ -73,7 +72,7 @@ export const Description = styled.div`
     gap: 0.4rem;
     li {
       background-color: ${roots.color.PRIMARY_X_LIGHT};
-      padding: 0.3rem .6rem;
+      padding: 0.3rem 0.6rem;
       font-size: ${roots.font.size.XXSM};
       border-radius: 0.3rem;
       color: rgba(255, 255, 255, 0.795);
@@ -87,11 +86,11 @@ export const Description = styled.div`
   }
   h2 {
     text-transform: capitalize;
-    line-height:calc( ${roots.font.line_heigth.LG} - .1rem);
-    font-size: calc(${roots.font.size.LG} - .1rem);
+    line-height: calc(${roots.font.line_heigth.LG} - 0.1rem);
+    font-size: calc(${roots.font.size.LG} - 0.1rem);
     @media (max-width: ${roots.screens.XXSM}) {
-      line-height:calc( ${roots.font.line_heigth.LG} - .3rem);
-    font-size: calc(${roots.font.size.LG} - .3rem);
+      line-height: calc(${roots.font.line_heigth.LG} - 0.3rem);
+      font-size: calc(${roots.font.size.LG} - 0.3rem);
     }
   }
   nav {
@@ -129,7 +128,7 @@ export const Description = styled.div`
         background-color: ${roots.color.LIGTH};
       }
       &:hover {
-        color: ${roots.color.LIGTH}
+        color: ${roots.color.LIGTH};
       }
     }
   }
@@ -139,66 +138,44 @@ export const Description = styled.div`
     right: 0;
     display: flex;
     align-items: flex-end;
-    gap: .3rem;
-    /* @media (max-width: ${roots.screens.XXSM}) {
-      flex-direction: column-reverse;
-    } */
-    .statistics{
+    gap: 0.3rem;
+    .statistics {
       display: flex;
-      gap: .3rem;
+      gap: 0.3rem;
       height: 25px;
-      span{
-        font-size: .7rem;
+      span {
+        font-size: 0.7rem;
         background: ${roots.color.PRIMARY_X_LIGHT};
         border-radius: 0.4rem;
         display: inline-flex;
         height: 100%;
+        padding: 0 1rem;
         align-items: center;
         justify-content: center;
         color: #d0d0d0;
         cursor: default;
       }
-      .display-likes{
-        width: 90px;
-      }
-      .display-views{
-        width: 120px;
-      }
+     
     }
-    .buttons-action{
+    .btns-action {
       display: flex;
-      gap: .3rem;
+      gap: 0.3rem;
       height: 25px;
-      /* @media (max-width: ${roots.screens.XXSM}) {
-        height: 30px;
-      } */
-      .liked {
+      .like-btn {
         background-color: ${roots.color.ALERT};
         i {
           color: ${roots.color.DARK};
         }
-        &::after {
-          content: 'Projeto curtido';
-          position: absolute;
-          background-color: ${roots.color.DARK};
-          width: 90px;
-          text-align: center;
-          padding: 0.2rem 0;
-          border-radius: 0.2rem;
-          font-size: 0.6rem;
-          pointer-events: none;
-          bottom: -1.9rem;
-          left: -1.6rem;
-          transform: translateY(-15px);
-          opacity: 0;
-          transition: 0.2s;
-        }
-      } 
-      button{
+      }
+      .btn-to-like-block {
+        pointer-events: none;
+        cursor: default;
+      }
+      button {
         all: unset;
         cursor: pointer;
         background: ${roots.color.PRIMARY_X_LIGHT};
-        font-size: .8rem;
+        font-size: 0.8rem;
         border-radius: 0.4rem;
         color: #d0d0d0;
         transition: 0.3s;
@@ -208,50 +185,32 @@ export const Description = styled.div`
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        /* @media (max-width: ${roots.screens.XXSM}) {
-        width: 40px;
-      } */
         &:hover {
-        background-color: ${roots.color.ALERT};
-        i {
-          color: ${roots.color.DARK};
+          background-color: ${roots.color.ALERT};
+          i {
+            color: ${roots.color.DARK};
+          }
+          &::after {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
         &::after {
-          transform: translateY(0);
-          opacity: 1;
+          position: absolute;
+          background-color: ${roots.color.DARK};
+          text-align: center;
+          padding: 0.2rem .7rem;
+          border-radius: 0.2rem;
+          font-size: 0.6rem;
+          pointer-events: none;
+          bottom: -1.9rem;
+          left: -1.4rem;
+          transform: translateY(-15px);
+          opacity: 0;
+          transition: 0.2s;
+          white-space: nowrap;
         }
       }
-      &::after {
-        position: absolute;
-        background-color: ${roots.color.DARK};
-        width: 80px;
-        text-align: center;
-        padding: 0.2rem 0;
-        border-radius: 0.2rem;
-        font-size: 0.6rem;
-        pointer-events: none;
-        bottom: -1.9rem;
-        left: -1.4rem;
-        transform: translateY(-15px);
-        opacity: 0;
-        transition: 0.2s;
-      }
-      }
     }
-    .button-like{
-      &::after{
-        content: 'Curtir projeto';
-      } 
-    }
-    .button-percent-techs{
-      &::after{
-        content: 'Estátisticas';
-        @media (max-width: ${roots.screens.XSM}) {
-          content: '';
-          display: none;
-        }
-      }
-    } 
   }
-
-`;
+`

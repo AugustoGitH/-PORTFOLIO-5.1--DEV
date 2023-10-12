@@ -68,11 +68,6 @@ const ImagesViewScreen = ({
             width={400}
             height={300}
           />
-          {
-            focusImage === viewScreen.mainImage && (
-              <S.MarkCover><i className='bx bxs-bookmark-alt'></i></S.MarkCover>
-            )
-          }
 
         </div>
         {notFocused.length > 0 && (
@@ -84,11 +79,6 @@ const ImagesViewScreen = ({
                   handleFocusImage(img);
                 }}
               >
-                {/* {
-                  img === viewScreen.mainImage && (
-                    <S.MarkCover><i className='bx bxs-bookmark-alt'></i></S.MarkCover>
-                  )
-                } */}
                 <img
                   alt={`imagem secundaria ${index}`}
                   src={img}

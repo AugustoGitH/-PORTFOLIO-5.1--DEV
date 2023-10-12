@@ -83,7 +83,8 @@ export const PopUpPercentTechs = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     gap: 1rem;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     height: 100%;
     padding: 1rem 1rem .5rem 0;
   }
@@ -116,30 +117,6 @@ export const BarTechnologie = styled.li<IBarTechnologieProps>`
     font-weight: bold;
     position: relative;
     cursor: default;
-    &::after{
-      content: ${({ tech }) => `"${tech}"`};
-      text-transform: uppercase;
-      letter-spacing: .02rem;
-      position: absolute;
-      left: 1.5rem;
-      bottom: -.4rem;
-      background-color: ${roots.color.DARK};
-      pointer-events: none;
-      color: ${roots.color.LIGTH};
-      padding: .2rem .5rem;
-      z-index: ${roots.orders.SUP};
-      border-radius: .3rem;
-      font-size: .5rem;
-      opacity: 0;
-      transform: translateX(10px);
-      transition: .2s;
-    }
-    &:hover{
-      &::after{
-        opacity: 1;
-        transform: translateX(0)
-      }
-      }
     i {
       font-size: 1.2rem;
     }

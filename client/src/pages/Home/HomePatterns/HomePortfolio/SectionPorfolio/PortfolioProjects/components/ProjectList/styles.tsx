@@ -23,16 +23,21 @@ export const ProjectList = styled.div`
   @media (max-width: ${roots.screens.XSM}) {
   }
   &::-webkit-scrollbar {
-    width: 3px;
-    background-color: #c9abab1a;
-    border-radius: 1rem;
-  }
-  &::-webkit-scrollbar-thumb {
-    width: 100%;
-    height: 90px;
-    border-radius: 1rem;
-    background-color: rgba(218, 197, 197, 0.253);
-  }
+  width: 3px;
+  background-color: #c9abab1a;
+  border-radius: 1rem;
+}
+
+&::-webkit-scrollbar-thumb {
+  width: 100%;
+  height: 90px;
+  border-radius: 1rem;
+  background-color: rgba(218, 197, 197, 0.253);
+}
+
+
+-ms-overflow-style: -ms-autohiding-scrollbar;
+
   .project {
     border-bottom: 1.5px solid #ffffff1d;
   }

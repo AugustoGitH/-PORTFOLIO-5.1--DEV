@@ -69,6 +69,7 @@ export const HomeAboutDescription = styled.article`
       transition: 0.2s;
       display: flex;
       align-items: center;
+      gap: .4rem;
       &:hover {
         background-color: ${roots.color.DARK};
         color: ${roots.color.LIGTH};

@@ -1,6 +1,7 @@
 
 
 
+import Translate from '../../../../../../../../components/Translate';
 import useFetchProjectsPublic from '../../../../../../../../queries/services/fetchProjectsPublic';
 import useProjectsStore from '../../../../../../../../stores/project/public/useProjects';
 import Project from './components/Project';
@@ -9,13 +10,13 @@ import * as S from './styles';
 
 const ProjectList = (): JSX.Element => {
   const [canvasProjects, projects] = useProjectsStore(state => [state.canvasProjects, state.projects])
-  const { isFetching, isError } = useFetchProjectsPublic()
+  const { isLoading, isError } = useFetchProjectsPublic()
 
 
   return (
     <S.ProjectList>
       {
-        isFetching && !projects ? (
+        isLoading && !projects ? (
           <>
             <ProjectLoading />
             <ProjectLoading />
@@ -26,7 +27,7 @@ const ProjectList = (): JSX.Element => {
       {
         isError && (
           <S.HelperText>
-            <span><i className='bx bxs-x-circle'></i>Ocorreu um erro ao buscar os projetos. Por favor, tente novamente mais tarde.</span>
+            <span><i className='bx bxs-x-circle'></i><Translate>Ocorreu um erro ao buscar os projetos. Por favor, tente novamente mais tarde.</Translate></span>
           </S.HelperText>
 
         )
@@ -34,14 +35,14 @@ const ProjectList = (): JSX.Element => {
       {
         projects && projects.length === 0 ? (
           <S.HelperText>
-            <span><i className='bx bxs-inbox'></i>Não existe nenhum projeto disponível no momento.</span>
+            <span><i className='bx bxs-inbox'></i><Translate>Não existe nenhum projeto disponível no momento.</Translate></span>
           </S.HelperText>
         ) : <></>
       }
       {
         projects && canvasProjects.length === 0 && projects.length !== 0 ? (
           <S.HelperText>
-            <span><i className='bx bxs-inbox'></i>Nenhum projeto corresponde a essa categoria no momento.</span>
+            <span><i className='bx bxs-inbox'></i><Translate>Nenhum projeto corresponde a essa categoria no momento.</Translate></span>
           </S.HelperText>
         ) : <></>
       }

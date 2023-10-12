@@ -10,13 +10,13 @@ import * as S from "./styles"
 
 const PainelManageProjects = (): JSX.Element => {
   const projects = useProjectsStore(state => state.projects)
-  const { isFetching, isError } = useFetchProjectsPrivate()
+  const { isLoading, isError } = useFetchProjectsPrivate()
   return (
     <S.PainelManageProjects>
       <h2>Gerenciar seus projetos</h2>
       <ul className="projects">
         {
-          isFetching && !projects && (
+          isLoading && !projects && (
             <S.HelperText>
               <Loader.Default color="light" />
             </S.HelperText>
@@ -37,8 +37,8 @@ const PainelManageProjects = (): JSX.Element => {
           )
         }
         {
-          projects && orderPresentationOfProjects<IProjectPrivate>(projects).map(project => (
-            <Project key={project._id} project={project} />
+          projects && orderPresentationOfProjects<IProjectPrivate>(projects).map((project, index) => (
+            <Project key={project._id} project={project} order={index} />
           ))
         }
       </ul>

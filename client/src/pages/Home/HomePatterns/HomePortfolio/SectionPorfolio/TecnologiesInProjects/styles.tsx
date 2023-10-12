@@ -20,7 +20,6 @@ export const TechologiesInProjects = styled.div`
   }
   h1 {
     margin-bottom: 1rem;
-    text-transform: capitalize;
     text-align: center;
     line-height: 2rem;
     position: absolute;
@@ -90,7 +89,7 @@ export const TechologiesInProjects = styled.div`
         justify-content: flex-start;
         align-items: center;
         @media(max-width: ${roots.screens.XSM}){
-          width: 100px;
+          width: 120px;
         }
         h2 {
           font-size: ${roots.font.size.SM};

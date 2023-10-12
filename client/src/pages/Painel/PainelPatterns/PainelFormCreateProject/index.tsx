@@ -1,100 +1,95 @@
-import { useEffect } from "react"
-import { Controller } from "react-hook-form"
+
+
 
 
 import InputSelectIdRepo from "./components/InputSelectIdRepo"
 import { optionsTechnologiesUsedProject, optionsTypeProject } from "./settings"
 import * as S from "./styles"
-import useCreateProject from "../../../../hooks/form/useCreateProject"
+import useCreateProject from "../../../../hooks/project/private/useCreateProject"
 import { Input } from "../../../../components/Input"
 import { Loader } from "../../../../components/Loader"
+import { TProjectTechnologiesUsed } from "../../../../types/Project"
+import { Alert } from "../../../../components/Alert"
+import roots from "../../../../styles/roots"
 
 const PainelFormCreateProject = (): JSX.Element => {
-  const { registerForm, registerInput, control, errors, isCreatingProject, isReset } = useCreateProject()
-  useEffect(() => {
-    console.log(errors)
-  }, [errors])
+  const { onChangeField, isCreating, isRestarted, statusForm, onSubmit, alertDialog, setAlertDialog } = useCreateProject()
+
 
   return (
-    <S.PainelFormCreateProject>
-      <h2>Criar Projeto</h2>
-      <form {...registerForm} noValidate>
-        {
-          isCreatingProject && (
-            <S.PopUpLoading>
-              <Loader.Default color="light" />
-            </S.PopUpLoading>
-          )
+    <>
+      <S.PainelFormCreateProject>
+        <h2>Criar Projeto</h2>
+        <form noValidate onSubmit={onSubmit}>
+          {
+            isCreating && (
+              <S.PopUpLoading>
+                <Loader.Default color="light" />
+              </S.PopUpLoading>
+            )
+          }
+          <Input.Default
+            label="Nome do Projeto"
+            onChange={(ev) => onChangeField("name", ev.target.value)}
+            value={statusForm.name}
+          />
+          <Input.Default
+            label="Link do Projeto"
+            onChange={(ev) => onChangeField("websiteLink", ev.target.value)}
+            value={statusForm.websiteLink}
+          />
+          <Input.Default
+            label="Link da Preview"
+            onChange={(ev) => onChangeField("videoLink", ev.target.value)}
+            value={statusForm.videoLink}
+          />
+          <Input.Default
+            label="Link do repositorio"
+            onChange={(ev) => onChangeField("repoLink", ev.target.value)}
+            value={statusForm.repoLink}
+          />
+          <Input.Checkboxes
+            label="Tipo de projeto"
+            options={optionsTypeProject}
+            onChange={({ value }) => onChangeField("type", value as string)}
+            value={statusForm.type}
+          />
+          <Input.Checkboxes
+            tagAnyone
+            label="Tecnologias e linguagens mais usadas"
+            options={optionsTechnologiesUsedProject}
+            onChange={({ value }) => onChangeField("technologiesUsed", value as TProjectTechnologiesUsed[])}
+            value={statusForm.technologiesUsed}
+          />
+
+          <InputSelectIdRepo
+            onChange={(value) => onChangeField("repoId", value)}
+            reset={isRestarted}
+          />
+          <Input.Images
+            onChange={(value) => onChangeField("images", value)}
+            reset={isRestarted}
+          />
+          <button>Criar Projeto</button>
+        </form>
+
+      </S.PainelFormCreateProject>
+      <Alert.Dialog
+        show={alertDialog.show}
+        icon={
+          alertDialog.error ? <i style={{ color: roots.color.ALERT }} className='bx bxs-error'></i> :
+            <i style={{ color: roots.color.SUCCESS }} className='bx bxs-check-circle' ></i>
         }
-        <Input.Default label="Nome do Projeto" helperText={errors.name?.message} error={!!errors.name}  {...registerInput("name")} />
-        <Input.Default label="Link do Projeto" helperText={errors.websiteLink?.message} error={!!errors.websiteLink}  {...registerInput("websiteLink")} />
-        <Input.Default label="Link da Preview" helperText={errors.videoLink?.message} error={!!errors.videoLink} {...registerInput("videoLink")} />
-        <Input.Default
-          label="Link do repositorio"
-          helperText={errors.repoLink?.message}
-          error={!!errors.repoLink}
-          {...registerInput("repoLink")}
-        />
-        <Controller
-          name="type"
-          control={control}
-          render={({ field: { onChange, name } }) => (
-            <Input.Checkboxes
-              label="Tipo de projeto"
-              name={name}
-              onChange={({ value }) => { onChange(value as string); }}
-              options={optionsTypeProject}
-              helperText={errors.type?.message}
-              error={!!errors.type}
-              reset={isReset}
-            />
-          )}
-        />
-        <Controller
-          name="technologiesUsed"
-          control={control}
-          render={({ field: { onChange, name } }) => (
-            <Input.Checkboxes
-              tagAnyone
-              label="Tecnologias e linguagens mais usadas"
-              name={name}
-              onChange={({ value }) => { onChange(value as [string, ...string[]]) }}
-              options={optionsTechnologiesUsedProject}
-              helperText={errors.technologiesUsed?.message}
-              error={!!errors.technologiesUsed}
-              reset={isReset}
-            />
-          )}
-        />
-        <Controller
-          name="repoId"
-          control={control}
-          render={({ field: { onChange } }) => (
-            <InputSelectIdRepo
-              onChange={(value) => { onChange(value) }}
-              error={!!errors.repoId}
-              helperText={errors.repoId?.message}
-              reset={isReset}
-            />
-          )}
-        />
-
-        <Controller
-          name="images"
-          control={control}
-          render={({ field: { onChange } }) => (
-            <Input.Images
-              onChange={(value) => { onChange(value as { images: string[], cover: string }) }}
-              error={!!errors.images}
-              helperText={errors.images?.cover?.message}
-              reset={isReset}
-            />
-          )}
-        />
-        <button>Criar Projeto</button>
-      </form>
-
-    </S.PainelFormCreateProject>
+        title={alertDialog.title}
+        message={alertDialog.message}
+        buttons={{
+          close: {
+            placeholder: "Fechar",
+            on: () => setAlertDialog(prevAlertD => ({ ...prevAlertD, show: false }))
+          },
+        }}
+      />
+    </>
   )
 }
 
