@@ -96,7 +96,7 @@ export const Checkbox = styled.div<ICheckboxProps>`
   .cbx span:last-child {
     padding-left: 8px;
     line-height: 18px;
-    color: ${({ error }) => error ? roots.color.DANGER : roots.color.LIGTH};
+    color: ${({ error }) => error ? roots.color.DANGER : roots.color.LIGHT};
     font-weight: bold;
   }
 

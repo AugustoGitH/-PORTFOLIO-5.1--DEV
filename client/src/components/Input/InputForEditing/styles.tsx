@@ -20,7 +20,7 @@ export const InputForEditing = styled.div`
       color: #000;
     }
     &:focus{
-      background-color: ${roots.color.LIGTH};
+      background-color: ${roots.color.LIGHT};
     }
   }
   button{
@@ -33,7 +33,7 @@ export const InputForEditing = styled.div`
     font-size: .9rem;
     color: #ffffffb4;
     &:hover{
-      color:${roots.color.LIGTH};
+      color:${roots.color.LIGHT};
     }
   }
 

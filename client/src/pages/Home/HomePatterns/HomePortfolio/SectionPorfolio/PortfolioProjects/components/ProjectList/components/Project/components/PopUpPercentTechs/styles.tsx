@@ -127,7 +127,7 @@ export const BarTechnologie = styled.li<IBarTechnologieProps>`
     background-color: #e8e8e869;
     .bar-percent-content {
       height: 100%;
-      background-color: ${roots.color.LIGTH};
+      background-color: ${roots.color.LIGHT};
       position: relative;
       width: 0%;
       ${({ percent, order, tech, id }) => `

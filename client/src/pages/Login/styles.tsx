@@ -15,7 +15,7 @@ export const Login = styled.div`
   padding: 1rem;
   .card{
     width: 500px;
-    background: ${roots.color.LIGTH};
+    background: ${roots.color.LIGHT};
     border-radius: 1rem;
     ${presenceAnimation({
   animation: "translateDown",
@@ -62,7 +62,7 @@ export const Login = styled.div`
       all: unset;
       margin-top: .9rem;
       background: ${roots.color.DARK};
-      color: ${roots.color.LIGTH};
+      color: ${roots.color.LIGHT};
       padding: .5rem 1rem;
       border-radius: .5rem;
       font-size: ${roots.font.size.XSM};

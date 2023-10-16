@@ -28,7 +28,7 @@ const useLogin = (): IUseFormLogin => {
     alert(message);
 
     if (isLogged) {
-      navigation('/painel');
+      navigation('/panel');
       reset();
     }
   };

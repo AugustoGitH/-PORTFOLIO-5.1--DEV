@@ -67,7 +67,7 @@ export const InputDefault = styled.div<IInputDefaultProps>`
   input:valid ~ i,
   input:focus ~ i {
     height: 44px;
-    background-color: ${({ error }) => error ? roots.color.DANGER : roots.color.LIGTH};
+    background-color: ${({ error }) => error ? roots.color.DANGER : roots.color.LIGHT};
   }
   }
   .helper-text{

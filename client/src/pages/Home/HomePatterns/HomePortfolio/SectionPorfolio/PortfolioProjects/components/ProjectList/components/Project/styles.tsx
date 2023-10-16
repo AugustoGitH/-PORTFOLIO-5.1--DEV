@@ -125,10 +125,10 @@ export const Description = styled.div`
       }
       &:hover::after {
         width: 100%;
-        background-color: ${roots.color.LIGTH};
+        background-color: ${roots.color.LIGHT};
       }
       &:hover {
-        color: ${roots.color.LIGTH};
+        color: ${roots.color.LIGHT};
       }
     }
   }

@@ -11,6 +11,7 @@ const HomePortfolio = forwardRef<HTMLDivElement, IHomePortfolioProps>(({ id }, r
   return (
     <S.HomePortfolio ref={ref} id={id}>
       <SectionPorfolio.Main />
+      <SectionPorfolio.ProfessionalExperiences />
       <SectionPorfolio.TechologiesInProjects />
       <SectionPorfolio.PortfolioProjects />
     </S.HomePortfolio>

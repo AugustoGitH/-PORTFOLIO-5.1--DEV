@@ -4,7 +4,7 @@ const roots = {
     PRIMARY_LIGHT: '#2b2525',
     PRIMARY_X_LIGHT: "#444343",
     ALERT: '#e9b95b',
-    LIGTH: '#e8ecec',
+    LIGHT: '#e8ecec',
     DARK: '#0c0c0c',
     DARK_LIGHT: '#636565',
     DANGER: "red",

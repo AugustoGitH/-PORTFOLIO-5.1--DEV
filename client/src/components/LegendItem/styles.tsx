@@ -31,7 +31,7 @@ export const LegendItem = styled.div<ILegendItemProps>`
     cursor: default;
     padding: .4rem 1rem;
     border-radius: .3rem;
-    color: ${roots.color.LIGTH};
+    color: ${roots.color.LIGHT};
     text-align: center;
     font-size: ${({ sizeLegend }) => sizesLegend[sizeLegend as TSizeLegend]};
     z-index: 20;

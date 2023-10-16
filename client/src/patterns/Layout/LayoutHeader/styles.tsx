@@ -26,7 +26,7 @@ export const LayoutHeader = styled.header`
     align-items: center;
     a {
       all: unset;
-      color: ${roots.color.LIGTH};
+      color: ${roots.color.LIGHT};
       h1 {
         font-size: ${roots.font.size.SM};
         letter-spacing: 0.1rem;

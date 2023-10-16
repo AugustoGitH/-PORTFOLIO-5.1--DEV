@@ -8,9 +8,13 @@ const translateString = (string: string, lang: TLanguage) => {
     Object.entries(multiLang).find(
       ([, translatedString]) =>
         extractStringFromHTML(
-          normalizeString(translatedString as string, { toLowerCase: true })
+          normalizeString(translatedString as string, {
+            toLowerCase: true,
+          }).trim()
         ) ===
-        extractStringFromHTML(normalizeString(string, { toLowerCase: true }))
+        extractStringFromHTML(
+          normalizeString(string, { toLowerCase: true }).trim()
+        )
     )
   )
   return multiLang ? multiLang[lang] : string

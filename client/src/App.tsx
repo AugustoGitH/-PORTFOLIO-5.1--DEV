@@ -17,9 +17,9 @@ function App() {
       <Route path="*" element={<Layout.PageNotFound />} />
       <Route path="/" element={<Page.Home />} />
       <Route path="/login" element={<Page.Login />} />
-      <Route path="/painel" element={
+      <Route path="/panel" element={
         <Auth.PrivateRouter redirect='/'>
-          <Page.Painel />
+          <Page.Panel />
         </Auth.PrivateRouter>
       } />
     </Routes>

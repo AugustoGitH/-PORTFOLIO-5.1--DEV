@@ -3,6 +3,120 @@ import { TLanguage } from './types'
 interface IMultiLang extends Record<TLanguage, string> {}
 const multilanglData: IMultiLang[] = [
   {
+    'pt-br':
+      'Como Desenvolvedor Front-End em Next.js e React.js, crio interfaces de usuário responsivas e atraentes, mantendo altos padrões de qualidade e colaborando em equipes multidisciplinares para projetos impactantes. Comprometido com a excelência na entrega de código de qualidade, participo de revisões de código e acompanho as tendências do desenvolvimento Front-End.',
+    'en-us':
+      'As a Front-End Developer in Next.js and React.js, I create responsive and appealing user interfaces while maintaining high-quality standards. I collaborate in multidisciplinary teams for impactful projects. Committed to delivering quality code, I actively participate in code reviews and stay updated on Front-End development trends.',
+    es: 'Como Desarrollador Front-End en Next.js y React.js, creo interfaces de usuario receptivas y atractivas, manteniendo altos estándares de calidad y colaborando en equipos multidisciplinarios para proyectos impactantes. Comprometido con la entrega de código de calidad, participo activamente en revisiones de código y me mantengo al tanto de las tendencias en desarrollo Front-End.',
+  },
+  {
+    'pt-br':
+      'Atividades-chave incluem o desenvolvimento de sistemas web com JavaScript e seus frameworks, colaboração no planejamento de design de projetos, além do gerenciamento de servidores e bancos de dados de clientes. Como parte da equipe, contribuo para a criação de soluções web de alto desempenho, mantendo o foco na excelência e seguindo as melhores práticas do setor.',
+    'en-us':
+      'Key activities include web systems development using JavaScript and its frameworks, collaboration in project design planning, as well as client server and database management. As a part of the team, I contribute to the creation of high-performance web solutions, maintaining a focus on excellence and adhering to industry best practices.',
+    es: 'Como Desarrollador Front-End en Next.js y React.js, soy responsable de crear interfaces de usuario altamente responsivas, atractivas y optimizadas, manteniendo aplicaciones web de alta calidad y adhiriendo a las mejores prácticas de la industria. Colaboro eficazmente en equipos multidisciplinarios, contribuyendo al éxito de proyectos impactantes, demostrando un compromiso con la excelencia en la entrega de código de calidad y participando...',
+  },
+  {
+    'pt-br': 'Desenvolvedor Web Full-Stack Freelancer',
+    'en-us': 'Freelance Full-Stack Web Developer',
+    es: 'Desarrollador Web Full-Stack Freelance',
+  },
+  {
+    'pt-br': 'Janeiro',
+    'en-us': 'January',
+    es: 'Enero',
+  },
+  {
+    'pt-br': 'Fevereiro',
+    'en-us': 'February',
+    es: 'Febrero',
+  },
+  {
+    'pt-br': 'Março',
+    'en-us': 'March',
+    es: 'Marzo',
+  },
+  {
+    'pt-br': 'Abril',
+    'en-us': 'April',
+    es: 'Abril',
+  },
+  {
+    'pt-br': 'Maio',
+    'en-us': 'May',
+    es: 'Mayo',
+  },
+  {
+    'pt-br': 'Junho',
+    'en-us': 'June',
+    es: 'Junio',
+  },
+  {
+    'pt-br': 'Julho',
+    'en-us': 'July',
+    es: 'Julio',
+  },
+  {
+    'pt-br': 'Agosto',
+    'en-us': 'August',
+    es: 'Agosto',
+  },
+  {
+    'pt-br': 'Setembro',
+    'en-us': 'September',
+    es: 'Septiembre',
+  },
+  {
+    'pt-br': 'Outubro',
+    'en-us': 'October',
+    es: 'Octubre',
+  },
+  {
+    'pt-br': 'Novembro',
+    'en-us': 'November',
+    es: 'Noviembre',
+  },
+  {
+    'pt-br': 'Dezembro',
+    'en-us': 'December',
+    es: 'Diciembre',
+  },
+  {
+    'pt-br': 'Tech Legion - Tempo Parcial',
+    'en-us': 'Tech Legion - Part-Time',
+    es: 'Tech Legion - Tiempo Parcial',
+  },
+  {
+    'pt-br': 'Desenvolvedor Web Full-Stack | Community Manager Voluntário',
+    'en-us': 'Full-Stack Web Developer | Volunteer Community Manager',
+    es: 'Desarrollador Web Full-Stack | Gestor de Comunidad Voluntario',
+  },
+  {
+    'pt-br': 'DRT Sistemas - Tempo Integral',
+    'en-us': 'DRT Sistemas - Full-Time',
+    es: 'DRT Sistemas - Tiempo Completo',
+  },
+  {
+    'pt-br': 'GetNinjas - Tempo Parcial',
+    'en-us': 'GetNinjas - Part-Time',
+    es: 'GetNinjas - Tiempo Parcial',
+  },
+  {
+    'pt-br': 'Workana - Tempo Parcial',
+    'en-us': 'Workana - Part-Time',
+    es: 'Workana - Tiempo Parcial',
+  },
+  {
+    'pt-br': 'Desenvolvedor Junior Front-End',
+    'en-us': 'Junior Front-End Developer',
+    es: 'Desarrollador Front-End Junior',
+  },
+  {
+    'pt-br': 'Minhas Experiências',
+    'en-us': 'My Experiences',
+    es: 'Mis Experiencias',
+  },
+  {
     'pt-br': 'Contate-me',
     'en-us': 'Contact-me',
     es: 'Contáctame',

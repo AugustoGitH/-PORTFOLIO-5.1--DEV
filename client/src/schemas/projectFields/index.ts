@@ -70,11 +70,11 @@ const allConditionsSchema = (
           typeof fieldsProject.repoLink !== 'string',
         message: 'O link do repositório deve ser do tipo string!',
       },
-      {
-        condition: !!fieldsProject.repoId && !!fieldsProject.repoLink,
-        message:
-          'Conflito! Você não pode enviar informações do repositório pelo id e um link não linear do repositório!',
-      },
+      // {
+      //   condition: !!fieldsProject.repoId && !!fieldsProject.repoLink,
+      //   message:
+      //     'Conflito! Você não pode enviar informações do repositório pelo id e um link não linear do repositório!',
+      // },
     ],
   },
   type: {
@@ -119,11 +119,11 @@ const allConditionsSchema = (
           !!fieldsProject.repoId && typeof fieldsProject.repoId !== 'number',
         message: 'O id do repositorio do preojeto deve ser um número!',
       },
-      {
-        condition: !!fieldsProject.repoLink && !!fieldsProject.repoId,
-        message:
-          'Conflito! Você não pode enviar informações do repositório pelo id e um link não linear do repositório!',
-      },
+      // {
+      //   condition: !!fieldsProject.repoLink && !!fieldsProject.repoId,
+      //   message:
+      //     'Conflito! Você não pode enviar informações do repositório pelo id e um link não linear do repositório!',
+      // },
     ],
   },
   ...(!!fieldsProject.images && {

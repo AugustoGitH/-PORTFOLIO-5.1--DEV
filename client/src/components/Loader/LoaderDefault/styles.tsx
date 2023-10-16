@@ -10,7 +10,7 @@ interface ILoaderDefaultProps {
 export const LoaderDefault = styled.div<ILoaderDefaultProps>`
   display: inline-flex;
   .loader {
-    border: ${({ size }) => size === "lg" ? "5px" : size === "md" ? "3px" : size === "sm" ? "2px" : ""} solid ${({ color }) => color === "dark" ? roots.color.DARK : roots.color.LIGTH};
+    border: ${({ size }) => size === "lg" ? "5px" : size === "md" ? "3px" : size === "sm" ? "2px" : ""} solid ${({ color }) => color === "dark" ? roots.color.DARK : roots.color.LIGHT};
     border-left-color: transparent;
     border-radius: 50%;
     width: ${({ size }) => size === "lg" ? "40px" : size === "md" ? "20px" : size === "sm" ? "14px" : ""};

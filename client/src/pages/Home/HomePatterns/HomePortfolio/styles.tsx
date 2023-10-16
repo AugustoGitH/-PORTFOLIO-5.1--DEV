@@ -5,7 +5,7 @@ import roots from '../../../../styles/roots';
 export const HomePortfolio = styled.div`
   width: calc(100% - 400px);
   padding: 0 2rem;
-  color: ${roots.color.LIGTH};
+  color: ${roots.color.LIGHT};
   @media (max-width: ${roots.screens.XLG}) {
     width: 100%;
     padding: 0rem 2rem 2rem 2rem;

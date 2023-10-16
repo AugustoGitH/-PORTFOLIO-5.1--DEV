@@ -21,7 +21,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  color: ${roots.color.LIGTH};
+  color: ${roots.color.LIGHT};
   font-family: ${roots.font.family.POPPINS};
   background-color: ${roots.color.PRIMARY};
 }

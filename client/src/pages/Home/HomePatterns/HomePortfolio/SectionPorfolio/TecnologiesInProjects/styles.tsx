@@ -6,7 +6,7 @@ import roots from "../../../../../../styles/roots";
 
 export const TechologiesInProjects = styled.div`
   background-color: ${roots.color.PRIMARY_LIGHT};
-  margin-top: 7rem;
+  margin-top: 3rem;
   border-radius: 1.5rem;
   padding: 3rem 1rem 1rem 1rem;
   display: flex;
@@ -41,7 +41,7 @@ export const TechologiesInProjects = styled.div`
       padding: 0.4rem 1.3rem;
       cursor: default;
       border: 1.4px solid rgba(255, 255, 255, 0.596);
-      transition: 0.3s;
+      transition: 0.3s ease-in;
       position: relative;
       @media (max-width: ${roots.screens.MD}) and (min-width: ${roots.screens.LG}) {
         width: calc(50% - 2rem);
@@ -61,7 +61,7 @@ export const TechologiesInProjects = styled.div`
           right: -3px;
           top: -2px;
           transform: translateX(-50%);
-          transition: 0.3s;
+          transition: 0.3s ease-in;
         }
         &::before {
           content: "";
@@ -72,17 +72,17 @@ export const TechologiesInProjects = styled.div`
           left: -3px;
           bottom: -2px;
           transform: translateX(-50%);
-          transition: 0.3s;
+          transition: 0.3s ease-in;
         }
         &:hover::after,
         &:hover::before {
           width: 0%;
         }
         &:hover {
-          border: 1.4px solid ${roots.color.LIGTH};
+          border: 1.4px solid ${roots.color.LIGHT};
         }
         &:hover h2 {
-          color: ${roots.color.LIGTH};
+          color: ${roots.color.LIGHT};
         }
       span {
         display: flex;
@@ -93,7 +93,7 @@ export const TechologiesInProjects = styled.div`
         }
         h2 {
           font-size: ${roots.font.size.SM};
-          transition: 0.3s;
+          transition: 0.3s ease-in;
           color: rgba(255, 255, 255, 0.753);
         }
         i {

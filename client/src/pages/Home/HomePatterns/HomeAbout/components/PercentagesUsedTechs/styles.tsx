@@ -34,7 +34,7 @@ export const NotFound = styled.div`
   }
   span{
     background-color: ${roots.color.DARK};
-    color: ${roots.color.LIGTH};
+    color: ${roots.color.LIGHT};
     padding: .5rem 1rem;
     border-radius: .3rem;
     display: inline-flex;
@@ -68,7 +68,7 @@ export const BarPercentage = styled.li<IBarPercentageProps>`
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      color: ${roots.color.LIGTH};
+      color: ${roots.color.LIGHT};
       font-size: .8rem;
       position: relative;
       cursor: default;
@@ -100,7 +100,7 @@ export const BarPercentage = styled.li<IBarPercentageProps>`
         .percentage-value {
           position: absolute;
           background-color: ${roots.color.DARK};
-          color: ${roots.color.LIGTH};
+          color: ${roots.color.LIGHT};
           padding: 0.2rem 0.3rem;
           font-size: 0.7rem;
           border-radius: 0.3rem;

@@ -17,7 +17,7 @@ export const SubTitle = styled.div`
     white-space: nowrap;
     font-size: .7rem;
     background-color: ${roots.color.DARK};
-    color: ${roots.color.LIGTH};
+    color: ${roots.color.LIGHT};
     left: 50%;
     transform: translateX(-50%);
 

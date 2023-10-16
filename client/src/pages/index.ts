@@ -1,10 +1,9 @@
-import Home from "./Home";
-import Login from "./Login";
-import Painel from "./Painel";
-
+import Home from './Home'
+import Login from './Login'
+import Panel from './Panel'
 
 export const Page = {
   Home,
   Login,
-  Painel 
+  Panel,
 }

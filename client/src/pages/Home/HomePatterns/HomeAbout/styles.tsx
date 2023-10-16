@@ -1,6 +1,7 @@
 
 import { styled } from 'styled-components';
 import roots from '../../../../styles/roots';
+import { presenceAnimation } from '@/animations/presence';
 
 export const HomeAbout = styled.section`
   width: 400px;
@@ -8,7 +9,7 @@ export const HomeAbout = styled.section`
   border-radius: 1.5rem;
   flex: none;
   color: ${roots.color.DARK};
-  background-color: ${roots.color.LIGTH};
+  background-color: ${roots.color.LIGHT};
   padding: 1rem 2rem 6rem 2rem;
   position: relative;
 
@@ -72,7 +73,7 @@ export const HomeAboutDescription = styled.article`
       gap: .4rem;
       &:hover {
         background-color: ${roots.color.DARK};
-        color: ${roots.color.LIGTH};
+        color: ${roots.color.LIGHT};
       }
     }
   }
@@ -92,7 +93,7 @@ export const InfoProjectsGit = styled.section`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: ${roots.color.LIGTH};
+    color: ${roots.color.LIGHT};
     font-size: 0.9rem;
     width: 30px;
     height: 30px;
@@ -113,7 +114,7 @@ export const InfoPercentTechs = styled.section`
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: ${roots.color.LIGTH};
+      color: ${roots.color.LIGHT};
       font-size: 0.9rem;
       width: 30px;
       height: 30px;
@@ -175,12 +176,12 @@ export const ContactMe = styled.section`
           font-size: 1.2rem;
           margin-left: 0.4rem;
           transition: transform 0.2s;
-          background-color: ${roots.color.LIGTH};
+          background-color: ${roots.color.LIGHT};
           position: relative;
           &::after {
             content: '';
             position: absolute;
-            background-color: ${roots.color.LIGTH};
+            background-color: ${roots.color.LIGHT};
             height: 100%;
             width: 30px;
             @media (max-width: ${roots.screens.XXSM}) {
@@ -198,4 +199,28 @@ export const TextCopyRigth = styled.p`
   margin-top: 5rem;
   text-align: center;
   line-height: 1rem;
+  position: relative;
+  a{
+    all: unset;
+    background: ${roots.color.DARK};
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: ${roots.color.LIGHT};
+
+    ${presenceAnimation({
+  animation: 'scale',
+  duration: .2
+})}
+  }
 `;

@@ -128,8 +128,8 @@ export const TechPresentation = styled.div`
           }
         }
         &:hover {
-          border: 1.5px solid ${roots.color.LIGTH};
-          color: ${roots.color.LIGTH};
+          border: 1.5px solid ${roots.color.LIGHT};
+          color: ${roots.color.LIGHT};
         }
         &:hover::after {
           height: 0%;

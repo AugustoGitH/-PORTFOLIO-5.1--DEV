@@ -1,5 +1,5 @@
 
-import { forwardRef, useContext } from "react"
+import { forwardRef, useContext, useState } from "react"
 
 
 
@@ -7,14 +7,47 @@ import { forwardRef, useContext } from "react"
 
 import PercentagesUsedTechs from "./components/PercentagesUsedTechs"
 import * as S from "./styles"
-import ancors from "../../../../settings/ancors"
-import Translate from "../../../../components/Translate"
+import ancors from "@/settings/ancors"
+import Translate from "@/components/Translate"
 
-import { TranslateContext } from "../../../../contexts/TranslateContext"
-import translateString from "../../../../settings/translation/utils/translateString"
+import { TranslateContext } from "@/contexts/TranslateContext"
+import translateString from "@/settings/translation/utils/translateString"
 
-import useProjectsStore from "../../../../stores/project/public/useProjects"
-import { Loader } from "../../../../components/Loader"
+import useProjectsStore from "@/stores/project/public/useProjects"
+import { Loader } from "@/components/Loader"
+
+import { Icon } from "@iconify-icon/react/dist/iconify.js"
+import { Link } from "react-router-dom"
+
+
+
+
+const TextCopyRigth = () => {
+  const maxClicks = 5
+
+  const [counterClick, setCounterClick] = useState(0)
+
+  const handleClickTextCopyRigth = () => {
+    setCounterClick(prevCounter => (
+      prevCounter === maxClicks ? 0 : prevCounter + 1
+    ))
+  }
+
+
+  return (
+    <S.TextCopyRigth onClick={handleClickTextCopyRigth}>
+      {
+        counterClick === maxClicks && (
+          <Link to="/login">
+            <Icon icon="ri:dashboard-fill" />
+          </Link>
+        )
+      }
+
+      © Augusto Caetano Westphal, 2023. <br />All Rights Reserved
+    </S.TextCopyRigth>
+  )
+}
 
 
 interface IHomeAboutProps {
@@ -24,6 +57,9 @@ interface IHomeAboutProps {
 const HomeAbout = forwardRef<HTMLDivElement, IHomeAboutProps>(({ id }, ref) => {
   const { language } = useContext(TranslateContext)
   const projects = useProjectsStore(state => state.projects)
+
+
+
   return (
     <S.HomeAbout ref={ref} id={id}>
       <S.ImageProfile>
@@ -88,7 +124,7 @@ const HomeAbout = forwardRef<HTMLDivElement, IHomeAboutProps>(({ id }, ref) => {
           </li>
         </ul>
       </S.ContactMe>
-      <S.TextCopyRigth>© Augusto Caetano Westphal, 2023. <br />All Rights Reserved</S.TextCopyRigth>
+      <TextCopyRigth />
     </S.HomeAbout>
   )
 })
