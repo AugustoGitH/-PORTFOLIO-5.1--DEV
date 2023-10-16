@@ -6,13 +6,13 @@ export const AccordionsProfessionalExperiences = styled.div`
   display: flex;
   /* align-items: flex-start; */
   gap: 1.5rem;
-  @media (max-width: 730px) {
-    gap: 1rem;
-  }
   .line-progress-exp {
     width: 2px;
     background-color: ${roots.color.PRIMARY_X_LIGHT};
     position: relative;
+    @media (max-width: 730px) {
+      display: none;
+    }
   }
   .accordions-content {
     width: 100%;
@@ -54,8 +54,7 @@ export const AccordionProfessionalExperiences = styled.li<IAccordionProps>`
     transition: 0.2s;
     background-color: ${({ isOpen }) => (isOpen ? roots.color.ALERT : roots.color.DARK_LIGHT)};
     @media (max-width: 730px) {
-      top: .8rem;
-      left: calc((1rem + 8px) * -1);
+      display: none;
     }
   }
   .icon-arrow,
@@ -109,7 +108,7 @@ export const AccordionProfessionalExperiences = styled.li<IAccordionProps>`
         height: ${({ isOpen }) => (isOpen ? '300px' : '0px')};
       }
       @media (max-width: 460px) {
-        height: ${({ isOpen }) => (isOpen ? '400px' : '0px')};
+        height: ${({ isOpen }) => (isOpen ? '430px' : '0px')};
       }
       span.duration-of-work {
         font-size: ${roots.font.size.XSM};

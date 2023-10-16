@@ -3,6 +3,41 @@ import { TLanguage } from './types'
 interface IMultiLang extends Record<TLanguage, string> {}
 const multilanglData: IMultiLang[] = [
   {
+    'pt-br': 'Atualmente',
+    'en-us': 'Currently',
+    es: 'Actualmente',
+  },
+  {
+    'pt-br': 'Meses',
+    'en-us': 'Months',
+    es: 'Meses',
+  },
+  {
+    'pt-br': 'Ano',
+    'en-us': 'Year',
+    es: 'Año',
+  },
+  {
+    'pt-br': 'Anos',
+    'en-us': 'Years',
+    es: 'Años',
+  },
+  {
+    'pt-br': 'Mês',
+    'en-us': 'Month',
+    es: 'Mes',
+  },
+  {
+    'pt-br': 'Presencial',
+    'en-us': 'In-person',
+    es: 'Presencial',
+  },
+  {
+    'pt-br': 'Remotamente',
+    'en-us': 'Remotely',
+    es: 'De forma remota',
+  },
+  {
     'pt-br':
       'Como Desenvolvedor Front-End em Next.js e React.js, crio interfaces de usuário responsivas e atraentes, mantendo altos padrões de qualidade e colaborando em equipes multidisciplinares para projetos impactantes. Comprometido com a excelência na entrega de código de qualidade, participo de revisões de código e acompanho as tendências do desenvolvimento Front-End.',
     'en-us':
@@ -82,9 +117,9 @@ const multilanglData: IMultiLang[] = [
     es: 'Diciembre',
   },
   {
-    'pt-br': 'Tech Legion - Tempo Parcial',
-    'en-us': 'Tech Legion - Part-Time',
-    es: 'Tech Legion - Tiempo Parcial',
+    'pt-br': 'Tempo Parcial',
+    'en-us': 'Part-Time',
+    es: 'Tiempo Parcial',
   },
   {
     'pt-br': 'Desenvolvedor Web Full-Stack | Community Manager Voluntário',
@@ -92,19 +127,9 @@ const multilanglData: IMultiLang[] = [
     es: 'Desarrollador Web Full-Stack | Gestor de Comunidad Voluntario',
   },
   {
-    'pt-br': 'DRT Sistemas - Tempo Integral',
-    'en-us': 'DRT Sistemas - Full-Time',
-    es: 'DRT Sistemas - Tiempo Completo',
-  },
-  {
-    'pt-br': 'GetNinjas - Tempo Parcial',
-    'en-us': 'GetNinjas - Part-Time',
-    es: 'GetNinjas - Tiempo Parcial',
-  },
-  {
-    'pt-br': 'Workana - Tempo Parcial',
-    'en-us': 'Workana - Part-Time',
-    es: 'Workana - Tiempo Parcial',
+    'pt-br': 'Tempo Integral',
+    'en-us': 'Full-Time',
+    es: 'Tiempo Completo',
   },
   {
     'pt-br': 'Desenvolvedor Junior Front-End',
