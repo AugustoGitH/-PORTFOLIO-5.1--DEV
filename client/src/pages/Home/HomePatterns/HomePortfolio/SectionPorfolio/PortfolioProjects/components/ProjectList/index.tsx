@@ -16,7 +16,7 @@ const ProjectList = (): JSX.Element => {
   return (
     <S.ProjectList>
       {
-        isLoading && !projects ? (
+        isLoading && !projects && !isError ? (
           <>
             <ProjectLoading />
             <ProjectLoading />

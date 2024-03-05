@@ -132,7 +132,7 @@ const multilanglData: IMultiLang[] = [
     es: 'Tiempo Completo',
   },
   {
-    'pt-br': 'Desenvolvedor Junior Front-End',
+    'pt-br': 'Desenvolvedor Web Front-End Junior',
     'en-us': 'Junior Front-End Developer',
     es: 'Desarrollador Front-End Junior',
   },

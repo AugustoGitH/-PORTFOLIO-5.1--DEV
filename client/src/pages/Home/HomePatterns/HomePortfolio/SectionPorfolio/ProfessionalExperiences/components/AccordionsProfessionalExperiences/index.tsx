@@ -1,12 +1,12 @@
-import createDateFromMonthYearString from "@/utils/createDateFromMonthYearString"
+
 import * as S from "./styles"
-import calculateDifferenceBetweenDates from "@/utils/calculateDifferenceBetweenDates"
-import { monthsLabels } from "@/constants/dateLabels"
+
 
 import { Icon } from "@iconify-icon/react/dist/iconify.js"
-import { ReactNode, useState } from "react"
-import translateString from "@/settings/translation/utils/translateString"
+import { ReactNode, useEffect, useRef, useState } from "react"
+
 import { TLanguage } from "@/settings/translation/types"
+import generateLabelDurationOfWork from "./utils/generateLabelDurationOfWork"
 interface IAccordion {
   title: string | ReactNode,
   companyName: string | ReactNode,
@@ -35,22 +35,21 @@ interface IAccordionProps {
   onClick: () => void
 }
 
-const formatLabelDiff = (years: number, months: number, lang: TLanguage | undefined) => {
-  return `${years ? `${years} ${translateString(`ano${years !== 1 ? "s" : ""}`, lang)}` : ""} ${years && months ? "e" : ""} ${months ? `${months} ${translateString(`m${months !== 1 ? "eses" : "ês"}`, lang)}` : ""}`
-}
 
 const AccordionProfessionalExperiences = ({ lang, className, accordion, open, onClick }: IAccordionProps) => {
-  const dateStrStart = createDateFromMonthYearString(accordion.durationOfWork.startDate)
-  const dateStrEnd = accordion.durationOfWork.endDate ? createDateFromMonthYearString(accordion.durationOfWork.endDate) : null
-  const diffDateStartEnd = dateStrEnd ? calculateDifferenceBetweenDates(dateStrStart, dateStrEnd) : null
-  const diffDateStartCurrent = calculateDifferenceBetweenDates(dateStrStart, new Date())
+  const labelDurationOfWork = generateLabelDurationOfWork({ lang, durationOfWork: accordion.durationOfWork })
 
-  const labelDiffFinish = diffDateStartEnd ? formatLabelDiff(diffDateStartEnd.years, diffDateStartEnd.months, lang) : null
-  const labelDiffCurrent = formatLabelDiff(diffDateStartCurrent.years, diffDateStartCurrent.months, lang)
+  const detailContentRef = useRef<HTMLDivElement | null>(null)
+  const detailContainerRef = useRef<HTMLDivElement | null>(null)
 
-  const labelDurationOfWork = `
-    ${translateString(monthsLabels[dateStrStart.getMonth()], lang)} 
-    ${dateStrStart.getFullYear()} - ${accordion.durationOfWork.current ? `${translateString("Atualmente", lang)} • ${labelDiffCurrent}` : labelDiffFinish ?? ""}`
+  useEffect(() => {
+    const { current: detailContentElement } = detailContentRef
+    const { current: detailContaineElement } = detailContainerRef
+    if (detailContentElement && detailContaineElement) {
+      detailContaineElement.style.height = open ? `${detailContentElement.offsetHeight}px` : "0px"
+    }
+
+  }, [open])
 
   return (
     <S.AccordionProfessionalExperiences isOpen={open} onClick={onClick} className={className}>
@@ -60,17 +59,19 @@ const AccordionProfessionalExperiences = ({ lang, className, accordion, open, on
           <span className="title">{accordion.title}</span>
           <span className="company-name">{accordion.companyName}</span>
         </div>
-        <div className="detail">
-          <span className="duration-of-work">{labelDurationOfWork}</span>
-          <span className="locale-of-work">{accordion.localeOfWork}</span>
-          <p>{accordion.description}</p>
-          <ul className="technologies-used">
-            {
-              accordion.technologiesUsed.map((tech, index) => (
-                <li key={`tech-${index}`}>{tech}</li>
-              ))
-            }
-          </ul>
+        <div ref={detailContainerRef} className="detail">
+          <div ref={detailContentRef} className="detail-content">
+            <span className="duration-of-work">{labelDurationOfWork}</span>
+            <span className="locale-of-work">{accordion.localeOfWork}</span>
+            <p>{accordion.description}</p>
+            <ul className="technologies-used">
+              {
+                accordion.technologiesUsed.map((tech, index) => (
+                  <li key={`tech-${index}`}>{tech}</li>
+                ))
+              }
+            </ul>
+          </div>
         </div>
       </div>
       <Icon className="icon-arrow" icon="bx:chevron-down" />

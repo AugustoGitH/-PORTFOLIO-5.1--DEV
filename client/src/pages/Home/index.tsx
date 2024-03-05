@@ -4,7 +4,7 @@ import { HomePatterns } from "./HomePatterns"
 import useFetchProjectsPublic from "../../queries/services/fetchProjectsPublic"
 import useProjectsStore from "../../stores/project/public/useProjects"
 import ButtonNavigationAidHome from "../../components/ButtonNavigationAidHome"
-import { Alert } from "../../components/Alert"
+// import { Alert } from "../../components/Alert"
 
 
 const Home = (): JSX.Element => {
@@ -33,7 +33,7 @@ const Home = (): JSX.Element => {
           portfolio: ref.portfolio
         }}
       />
-      <Alert.Cookies />
+      {/* <Alert.Cookies /> */}
     </>
   )
 }

@@ -16,6 +16,7 @@ function App() {
     <Routes>
       <Route path="*" element={<Layout.PageNotFound />} />
       <Route path="/" element={<Page.Home />} />
+      <Route path="/dev/:charge" element={<Page.Home />} />
       <Route path="/login" element={<Page.Login />} />
       <Route path="/panel" element={
         <Auth.PrivateRouter redirect='/'>

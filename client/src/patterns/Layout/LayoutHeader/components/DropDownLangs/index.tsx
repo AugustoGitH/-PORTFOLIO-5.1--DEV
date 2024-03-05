@@ -16,7 +16,7 @@ const DropDownLangs = () => {
     const { current: dropDown } = dropDownRef
     if (showDropDown && dropDown) {
       const handleClickWindow = (ev: MouseEvent) => {
-        if (!dropDown?.contains(ev.target as Node)) {
+        if (!dropDown.contains(ev.target as Node)) {
           setShowDropDown(false)
         }
       }

@@ -1,5 +1,5 @@
-import roots from "@/styles/roots"
-import styled from "styled-components"
+import roots from '@/styles/roots'
+import styled from 'styled-components'
 
 export const AccordionsProfessionalExperiences = styled.div`
   width: 100%;
@@ -34,7 +34,7 @@ export const AccordionProfessionalExperiences = styled.li<IAccordionProps>`
   cursor: pointer;
   position: relative;
   @media (max-width: 730px) {
-    gap: .5rem;
+    gap: 0.5rem;
   }
   &:hover img,
   &:hover .accordion-content span {
@@ -52,7 +52,8 @@ export const AccordionProfessionalExperiences = styled.li<IAccordionProps>`
     height: 15px;
     border-radius: 50%;
     transition: 0.2s;
-    background-color: ${({ isOpen }) => (isOpen ? roots.color.ALERT : roots.color.DARK_LIGHT)};
+    background-color: ${({ isOpen }) =>
+    isOpen ? roots.color.ALERT : roots.color.DARK_LIGHT};
     @media (max-width: 730px) {
       display: none;
     }
@@ -102,37 +103,33 @@ export const AccordionProfessionalExperiences = styled.li<IAccordionProps>`
     .detail {
       width: 100%;
       overflow: hidden;
-      height: ${({ isOpen }) => (isOpen ? '220px' : '0px')};
       transition: height 0.2s;
-      @media (max-width: 730px) {
-        height: ${({ isOpen }) => (isOpen ? '300px' : '0px')};
-      }
-      @media (max-width: 460px) {
-        height: ${({ isOpen }) => (isOpen ? '430px' : '0px')};
-      }
-      span.duration-of-work {
-        font-size: ${roots.font.size.XSM};
-        opacity: 0.7;
-      }
-      span.locale-of-work {
-        font-size: ${roots.font.size.XSM};
-        opacity: 0.7;
-      }
-      p {
-        font-size: ${roots.font.size.XSM};
-      }
-      .technologies-used {
-        margin-top: 0.5rem;
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        li {
-          font-size: ${roots.font.size.XXSM};
-          background-color: ${roots.color.PRIMARY_X_LIGHT};
-          padding: 0.2rem 0.5rem;
-          border-radius: 0.3rem;
-          text-transform: uppercase;
-          opacity: 0.9;
+      .detail-content {
+        width: 100%;
+        span.duration-of-work {
+          font-size: ${roots.font.size.XSM};
+          opacity: 0.7;
+        }
+        span.locale-of-work {
+          font-size: ${roots.font.size.XSM};
+          opacity: 0.7;
+        }
+        p {
+          font-size: ${roots.font.size.XSM};
+        }
+        .technologies-used {
+          margin-top: 0.5rem;
+          display: flex;
+          gap: 0.5rem;
+          flex-wrap: wrap;
+          li {
+            font-size: ${roots.font.size.XXSM};
+            background-color: ${roots.color.PRIMARY_X_LIGHT};
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.3rem;
+            text-transform: uppercase;
+            opacity: 0.9;
+          }
         }
       }
     }

@@ -14,7 +14,7 @@ const ProfessionalExperiences = () => {
 
   const accordions = useMemo(() => ([
     {
-      title: translateString("Desenvolvedor Junior Front-End", language),
+      title: translateString("Desenvolvedor Web Front-End Junior", language),
       technologiesUsed: ["Next.js", "React.js", "MUI Components"],
       companyName: `DRT Sistemas - ${translateString("Tempo Integral", language)}`,
       durationOfWork: {

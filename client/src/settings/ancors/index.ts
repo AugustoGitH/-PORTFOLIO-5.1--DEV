@@ -8,7 +8,14 @@ const ancors = {
     WHATSAPP: 'https://wa.me/5527997435139',
   },
   others: {
-    CV: 'https://drive.google.com/file/d/106dLPMjQIAyVH58Q9m_n-vExW1M8_zd9/view?usp=sharing',
+    cv: {
+      FRONT_END:
+        'https://drive.google.com/file/d/1D1ER5qPYUTkoAT-00dJwkK5NOR5XqNOe/view?usp=sharing',
+      BACK_END:
+        'https://drive.google.com/file/d/14k-zqRWIQSX17OQEFmJFOIriMEmsTF8k/view?usp=sharing',
+      FULL_STACK:
+        'https://drive.google.com/file/d/1e83L7kx7c1kMQhqDmJf_Uft8vFrsmbdw/view?usp=sharing',
+    },
   },
 }
 

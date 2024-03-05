@@ -18,6 +18,7 @@ import { Loader } from "@/components/Loader"
 
 import { Icon } from "@iconify-icon/react/dist/iconify.js"
 import { Link } from "react-router-dom"
+import userRouterCharge from "@/hooks/useRouterCharge"
 
 
 
@@ -57,8 +58,7 @@ interface IHomeAboutProps {
 const HomeAbout = forwardRef<HTMLDivElement, IHomeAboutProps>(({ id }, ref) => {
   const { language } = useContext(TranslateContext)
   const projects = useProjectsStore(state => state.projects)
-
-
+  const { routersCharge } = userRouterCharge()
 
   return (
     <S.HomeAbout ref={ref} id={id}>
@@ -77,7 +77,7 @@ const HomeAbout = forwardRef<HTMLDivElement, IHomeAboutProps>(({ id }, ref) => {
           <a
             title={translateString("Baixe meu currículo!", language)}
             target="_blank"
-            href={ancors.others.CV} rel="noreferrer"
+            href={routersCharge.cv} rel="noreferrer"
           ><Translate>Meu Currículo</Translate> <i className='bx bxs-receipt' /></a>
         </nav>
       </S.HomeAboutDescription>

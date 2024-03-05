@@ -8,13 +8,19 @@ import Translate from "../../../../../../components/Translate"
 import * as S from "./styles"
 import { TranslateContext } from "../../../../../../contexts/TranslateContext"
 import translateString from "../../../../../../settings/translation/utils/translateString"
+import userRouterCharge from "@/hooks/useRouterCharge"
+
+
+
+
 const Main = (): JSX.Element => {
   const { language } = useContext(TranslateContext)
+  const { routersCharge } = userRouterCharge()
   return (
     <S.Main>
       <S.TechPresentation>
         <h3>
-          <Translate>Desenvolvedor Full-Stack</Translate>
+          <Translate>Desenvolvedor {routersCharge.label}</Translate>
           <i className='bx bxs-hot' ></i>
         </h3>
         <article>

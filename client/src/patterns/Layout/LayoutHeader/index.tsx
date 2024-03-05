@@ -10,11 +10,13 @@ import TitleItem from "../../../components/TitleItem"
 
 import DropDownLangs from "./components/DropDownLangs"
 import translateString from "../../../settings/translation/utils/translateString"
+import userRouterCharge from "@/hooks/useRouterCharge"
 
 
 
 const LayoutHeader = ({ mode = "home" }: IHeaderProps): JSX.Element => {
   const { language } = useContext(TranslateContext)
+  const { routersCharge } = userRouterCharge()
   return (
     <S.LayoutHeader>
       <div className="content">
@@ -30,7 +32,7 @@ const LayoutHeader = ({ mode = "home" }: IHeaderProps): JSX.Element => {
                     target="_blank"
                     title=""
                     download="nome_do_arquivo.pdf"
-                    href={ancors.others.CV} rel="noreferrer"
+                    href={routersCharge.cv} rel="noreferrer"
                   ><i className='bx bxs-receipt' /></a>
                 </TitleItem>
                 <TitleItem title={translateString("Meu Github!", language)}>
